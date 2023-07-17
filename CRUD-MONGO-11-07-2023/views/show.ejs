@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/show.css">
+
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a class="" href="http://localhost:8080/">Home</a></li>
+            <li><a href="/show">Show</a></li>
+        </ul>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Photo</th>
+                <th>Control</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% students.forEach((student)=> { %>
+                <tr>
+                    <td><%- student._id %></td>
+                    <td><%- student.firstName %></td>
+                    <td><%- student.lastName %></td>
+                    <td><%- student.email %></td>
+                    <td><%- student.mob_no %></td>
+                    <td><img class="image" src="uploads/<%- student.photo %>" alt=""></td>
+                    <td>
+                        <div class="container-2">
+                            <div class="button">
+                                <a href="/edit/<%= student._id %>">
+                                    <span class="blue">View</span>
+                                </a>
+                            </div>
+                            <div class="button">
+                                <a href="/delete/<%= student._id %>">
+                                    <span class="pink">Delete</span>
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</body>
+
+</html>

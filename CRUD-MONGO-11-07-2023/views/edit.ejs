@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+    <link rel="stylesheet" href="/css/update-edit.css">
+    <!-- <script src="imagePreview.js"></script> -->
+</head>
+
+<body>
+
+    <div class="navbar">
+        <ul>
+            <li><a class="" href="http://localhost:8080/">Home</a></li>
+            <li><a href="/show">Show</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <form action="#" method="post">
+            <div class="form">
+                <div class="title">Update</div>
+                <div class="input-container ic1">
+                    <input type="text" name="firstName" class="input" value=" <%- studentData.firstName %>">
+                </div>
+                <div class="input-container ic1">
+                    <input type="text" name="lastName" class="input" value=" <%- studentData.lastName %>">
+                </div>
+                <div class="input-container ic1">
+                    <input type="text" name="email" class="input" value=" <%- studentData.email %>">
+                </div>
+                <div class="input-container ic1">
+                    <input type="text" name="mob_no" class="input" value=" <%- studentData.mob_no %>">
+                </div>
+                <div>
+                    <div id="image">
+                        <img class="image" src="uploads/<%- studentData.photo %>" alt="">
+                    </div>
+                </div>
+                <div class="input-container ic2">
+                    <input type="file" name="photo" id="input-image">
+                </div>
+                <button type="submit" class="submit">Save</button>
+            </div>
+
+        </form>
+    </div>
+
+    <input type="image" src="" alt="">
+</body>
+
+</html>
