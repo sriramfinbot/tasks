@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit</title>
     <link rel="stylesheet" href="/css/update-edit.css">
-    <!-- <script src="imagePreview.js"></script> -->
+    <script src="/imagePreviewForEdit.js"></script>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
     </div>
 
     <div>
-        <form action="#" method="post">
+        <form action="#" method="post" enctype="multipart/form-data">
             <div class="form">
                 <div class="title">Update</div>
                 <div class="input-container ic1">
@@ -36,13 +36,25 @@
                 </div>
                 <div>
                     <div id="image">
-                        <img class="image" src="uploads/<%- studentData.photo %>" alt="">
+                        <img class="image" src="/uploads/<%- studentData.photo %>" alt="">
                     </div>
                 </div>
                 <div class="input-container ic2">
-                    <input type="file" name="photo" id="input-image">
+                    <img src="<%- studentData.photo %>" alt="">
                 </div>
-                <button type="submit" class="submit">Save</button>
+                <div class="input-container ic2">
+                    <input type="file" name="photo" id="">
+                </div>
+                <!-- <div class="center">
+                    <div class="form-input">
+                        <div class="preview">
+                            <img id="file-ip-1-preview" src="uploads/" alt="">
+                            <label for="file-ip-1">Update Image</label>
+                            <input type="fie" name="photo" id="file-ip-1" accept="image/*" onchange="showPreview(event)">
+                        </div>
+                    </div>
+                </div> -->
+                <button type="submit" class="submit">Update</button>
             </div>
 
         </form>
