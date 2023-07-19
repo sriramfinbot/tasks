@@ -40,9 +40,10 @@ li a:hover {
     background-color: #15172b;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 670px;
+    height: 700px;
     padding: 20px;
     width: 320px;
+    margin-top: 140px;
 }
 
 .title {
@@ -86,7 +87,7 @@ li a:hover {
     cursor: pointer;
     font-size: 18px;
     height: 50px;
-    margin-top: 40px;
+    margin-top: 10px;
     outline: 0;
     text-align: center;
     width: 100%;
@@ -97,8 +98,6 @@ li a:hover {
 }
 
 img {
-    /* height: auto; */
-    /* width: 100%; */
     margin-top: 10px;
     border: none;
     border-radius: 20px;
@@ -111,19 +110,6 @@ img {
     text-align: center;
 }
 
-#input-image {
-    background-color: #303245;
-    border-radius: 12px;
-    border: 0;
-    box-sizing: border-box;
-    color: #eee;
-    font-size: 18px;
-    height: 100%;
-    outline: 0;
-    padding: 4px 20px 0;
-    width: 100%;
-}
-
 .center {
     height: 12%;
     display: flex;
@@ -133,7 +119,7 @@ img {
 
 .form-input {
     width: 200px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .form-input img {
