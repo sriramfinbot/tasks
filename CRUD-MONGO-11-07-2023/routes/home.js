@@ -129,7 +129,6 @@ Router.post("/edit/:id", (req, res) => {
         if (file.photo[0].size == 0) {
             User.findById({ _id: req.params.id }, req.body).then((docs) => {
                 photo = docs.photo;
-                user.photo = photo;
                 console.log(photo, 123456)
 
                 User.findByIdAndUpdate({ _id: req.params.id }, user).then((docs) => {
@@ -143,11 +142,22 @@ Router.post("/edit/:id", (req, res) => {
                 console.log("error in findById delete", err);
             })
         } else {
+
+            User.findById({ _id: req.params.id }, req.body).then((docs) => {
+                var oldImagePhoto = docs.photo;
+                console.log(oldImagePhoto);
+                var oldImagePath = path.join("E:", "CRUD-MONGO-11-07-2023", "public", 'uploads') + '/' + oldImagePhoto;
+                fs.unlinkSync(oldImagePath);
+
+            }).catch((err) => {
+                console.log("error in findById delete", err);
+            })
+
             let oldPath = file.photo[0].filepath;
             let newPath = path.join("E:", "CRUD-MONGO-11-07-2023", "public", 'uploads') + '/' + Date.now() + "-" + file.photo[0].originalFilename;
 
             photo = Date.now() + "-" + file.photo[0].originalFilename;
-            
+
             let rawData = fs.readFileSync(oldPath)
             fs.writeFile(newPath, rawData, function (err) {
                 if (err) {
@@ -176,8 +186,8 @@ Router.get("/delete/:id", (req, res) => {
     } else {
 
         User.findById({ _id: req.params.id }, req.body).then((docs) => {
-            // let pathForDelete = path.join("E:", "CRUD-MONGO-11-07-2023", "public", 'uploads') + '/' + docs.photo;
-            // fs.unlinkSync(pathForDelete);
+            let pathForDelete = path.join("E:", "CRUD-MONGO-11-07-2023", "public", 'uploads') + '/' + docs.photo;
+            fs.unlinkSync(pathForDelete);
 
         }).catch((err) => {
             console.log("error in findById delete", err);
