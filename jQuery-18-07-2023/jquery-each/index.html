@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery.each demo</title>
+    <style>
+        div {
+            color: blue;
+        }
+
+        div#five {
+            color: red;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+</head>
+
+<body>
+
+    <div id="one"></div>
+    <div id="two"></div>
+    <div id="three"></div>
+    <div id="four"></div>
+    <div id="five"></div>
+
+    <div class="one"></div>
+    <div class="two"></div>
+    <div class="three"></div>
+    <div class="four"></div>
+    <div class="five"></div>
+    <script>
+
+        var arr = ["one", "two", "three", "four", "five"];
+        var obj = { one: 1, two: 2, three: 3, four: 4, five: 5 };
+        var obj2 = {firstName: "sriram", lastName: "ninja", id: 255, mob_no: 58935526555 }
+        var animals = ["tiger", "elephant", "giraffe", "hyena", "lion", "goat"]
+
+        jQuery.each(arr, function (i, val) {
+            $("#" + val).text("Mine is " + val + ".");
+            console.log(i)
+
+            // Will stop running after "three"
+            return (val !== "three");
+        });
+
+        jQuery.each(obj, function (i, val) {
+            console.log(i)
+            $("." + i).append(document.createTextNode(" - " + val));
+        });
+
+        $.each(obj2, function(key, value){
+            console.log(`${key} = ${value}`)
+        })
+
+        $.each(animals, function(index, value){
+            console.log(`${index} = ${value}`)
+            // return (index !== 4)
+        })
+    </script>
+
+</body>
+
+</html>

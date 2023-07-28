@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Data-Attributes</title>
+</head>
+
+<body>
+    <a href="javascript:void(0)" data-id="1" data-age="20" data-rollno="101" class="link">Sri</a><br>
+    <a href="javascript:void(0)" data-id="2" data-age="25" data-rollno="102" class="link">Ram</a><br>
+    <a href="javascript:void(0)" data-id="3" data-age="20" data-rollno="103" class="link">Ninja</a><br>
+    <br>
+    <h1>Species</h1>
+    <p>Click on a species to see what type it is </p>
+    <ul>
+        <li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl</li>
+        <li onclick="showDetails(this)" id="shark" data-animal-type="fish">Shark</li>
+        <li onclick="showDetails(this)" id="lion" data-animal-type="animal">Lion</li>
+    </ul>
+
+    <article 
+    id="electric-cars" data-columns="3" data-index-number="12345" data-parent="cars"
+    >
+    Hello article
+    </article>
+    <script>
+        document.querySelectorAll(".link").forEach(function (link) {
+            link.addEventListener("click", function () {
+                // console.log(this.getAttribute("data-rollno"))
+                console.log(this.dataset.age)
+                console.log(this.dataset.id)
+            })
+        })
+
+        function showDetails(animal) {
+            let animalType = animal.getAttribute("data-animal-type");
+            alert("The " + animal.innerHTML + " is a " + animalType + ".")
+        }
+
+        const article = document.querySelector("#electric-cars");
+        article.addEventListener("click", () => {
+            console.log(`${article.dataset.columns}, ${article.dataset.indexNumber}, ${article.dataset.parent}`);
+            
+            alert(`${article.dataset.columns}, ${article.dataset.indexNumber}, ${article.dataset.parent}`)
+
+            console.log(article.dataset);
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <script src="bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <link rel="stylesheet" href="/css/show.css">
+    <script src="/show.js"></script>
+
+</head>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="http://localhost:8080/">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="http://localhost:8080/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/show">Show</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div class="hello">
+    <div class="container-fluid" id="main">
+        <form action="#" method="post" enctype="multipart/form-data">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email Address</th>
+                        <th scope="col">Mobile Number</th>
+                        <th scope="col">Post Applied For</th>
+                        <th scope="col">Blood Group</th>
+                        <th scope="col">NCC Certification</th>
+                        <th scope="col">Date Of Birth</th>
+                        <th scope="col">Gender</th>
+                        <th scope="col">Qualification</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% students.forEach((student)=> { %>
+                        <tr>
+                            <td><%- student.firstName %></td>
+                            <td><%- student.lastName %></td>
+                            <td><%- student.email %></td>
+                            <td><%- student.mob_no %></td>
+                            <td><%- student.Post %></td>
+                            <td><%- student.bld_group %></td>
+                            <td><%- student.NCC %></td>
+                            <td><%- student.dateOfBirth %></td>
+                            <td><%- student.gender %></td>
+                            <td><%- student.qualification %></td>
+                            <td><img class="image" src="uploads/<%- student.photo %>" alt=""></td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-primary"><a
+                                            href="/edit/<%- student._id %>">Edit</a></button>
+                                    <button type="button" id="<%- student._id %>" class="btn btn-danger"
+                                        onclick="deleteUser(event)">Delete</button>
+                                </div>
+                            </td>
+                            <% }) %>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+</body>
+
+</html>

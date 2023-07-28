@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
+    <script src="./bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="./lib/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="css/home.css"> -->    
+    <!-- <script src="client.js"></script> -->
+    <script src="app.js"></script>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <ul>
+            <li><a class="" href="http://localhost:8080/">Home</a></li>
+            <li><a href="/show">Show</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <form onsubmit="event.preventDefault()" method="post" enctype="multipart/form-data">
+            <div class="form">
+                <div class="title">Add</div>
+                <div class="input-container ic1">
+                    <input type="text" name="firstName" class="input" placeholder="Enter First Name">
+                </div>
+                <div class="input-container ic1">
+                    <input type="text" name="lastName" class="input" placeholder="Enter Last Name">
+                </div>
+                <div class="input-container ic2">
+                    <input type="text" name="email" class="input" placeholder="Email">
+                </div>
+                <div class="input-container ic2">
+                    <input type="text" name="mob_no" class="input" placeholder="Mobile Number">
+                </div>
+                <div class="input-container ic2">
+                    <input type="file" name="photo" class="input">
+                </div>
+                <button onclick="save()" class="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

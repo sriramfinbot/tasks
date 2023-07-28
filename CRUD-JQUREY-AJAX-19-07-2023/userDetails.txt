@@ -1,0 +1,12 @@
+first name 
+last name 
+email id
+mobile number
+gender
+blood group
+date of birth
+ncc certificate
+post applied for
+state
+highest educational qualification
+photo

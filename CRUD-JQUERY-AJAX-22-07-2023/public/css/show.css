@@ -1,0 +1,48 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+table {
+    text-align: center;
+    width: 900px;
+    margin: 20px auto;
+    font-family: sans-serif;
+}
+
+th, td {
+    padding: 10px;
+}
+
+th  {
+    background-color: #404040;
+    padding: 20px 0;
+    color: white;
+}
+
+td {
+    background-color: #eee;
+}
+
+tr {
+    height: 150px;
+    width: 150px;
+}
+
+.image {
+    height: 100px;
+    width: 100px;
+}
+
+span {
+    padding: 5px 10px;
+    margin: 3px;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}

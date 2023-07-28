@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <script src="bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="lib/jquery.min.js"></script>
+    <script src="imagePreview.js"></script>
+    <script src="app-Index.js"></script>
+    <link rel="stylesheet" href="css/index-home.css">
+    <script src="imagePreview.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="http://localhost:8080/">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="http://localhost:8080/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/show">Show</a>
+                    </li>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="mb-3">
+            <div class="required">*</div>
+            <label for="firstName" class="form-label">Enter First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter First Name"
+                onblur="f_NameBlur(event)">
+            <div class="f_nameValidation">First Name Should Not Empty</div>
+        </div>
+        <div class="mb-3">
+            <div class="required">*</div>
+            <label for="lastName" class="form-label">Enter Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name"
+                onblur="l_NameBlur(event)">
+            <div class="l_nameValidation">Last Name Should Not Empty</div>
+        </div>
+        <div class="mb-3">
+            <div class="required">*</div>
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Email address"
+                onkeyup="validateEmail(event)" onblur="emailBlur(event)">
+            <div class="emailValidation">Enter a valid email</div>
+            <div class="emailEmptyValidation">Email Should Not Empty</div>
+            <div class="emailExist">This email already exists, Try another</div>
+        </div>
+        <div class="mb-3">
+            <div class="required">*</div>
+            <label for="mob_no" class="form-label">Enter Mobile Number</label>
+            <div class="input-group">
+                <span class="input-group-text">+91</span>
+                <input type="text" class="form-control" id="mob_no" placeholder="Enter Mobile Number"
+                    onkeyup="mobileNumber(event)" onblur="mobBlur(event)">
+            </div>
+            <div class="mobValidation">Enter a valid mobile number</div>
+            <div class="mobEmptyValidation">Mobile Number Should Not Empty</div>
+        </div>
+        <div class="mb-3">
+            <div class="required">*</div>
+            <select class="form-select" id="post" aria-label="Post Applied For" onblur="postBlur(event)">
+                <option value="postAppFor" selected>Post Applied for</option>
+                <option value="Frontend Developer">Frontend Developer</option>
+                <option value="Backend Developer">Backend Developer</option>
+                <option value="Testing Engineer">Testing Engineer</option>
+                <option value="Support Engineer">Support Engineer</option>
+                <option value="Devops Engineer">Devops Engineer</option>
+                <option value="UX Designer">UX Designer</option>
+            </select>
+            <div class="postValidation">Select Appropriate Post You Want To Apply</div>
+        </div>
+        <div class="mb-3">
+            <div class="required">*</div>
+            <select class="form-select" id="bld_group" aria-label="Default select example" onblur="bloodBlur(event)">
+                <option value="Blood" selected>Blood Group</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+            <div class="bloodValidation">Select Your Blood Group</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="NCC" class="form-label">NCC Certification</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="A" value="A">
+                <label class="form-check-label" for="A">A</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="B" value="B">
+                <label class="form-check-label" for="B">B</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="C" value="C">
+                <label class="form-check-label" for="C">C</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="required">*</div>
+            <label for="date" class="form-label">Enter Date Of Birth</label>
+            <input type="date" name="" id="date" min="1990-01-01" max="2005-01-01" onblur="dateBlur(event)">
+            <div class="dateEmptyValidation">Select Appropriate Date Of Birth</div>
+        </div>
+
+        <div class="mb-3">
+            <div class="required">*</div>
+            <label class="form-label">Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="male" value="Male" checked>
+                <label class="form-check-label" for="Male">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="gender" id="Female" value="Female">
+                <label class="form-check-label" for="Female">
+                    Female
+                </label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="required">*</div>
+            <select class="form-select" id="qualification" aria-label="Select Highest Educational Qualification "
+                onblur="qualiBlur()">
+                <option value="quali" selected>Select Highest Educational Qualification</option>
+                <option value="MSc">MSc</option>
+                <option value="BSc">BSc</option>
+                <option value="MBA">MBA</option>
+                <option value="BBA">BBA</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="B.Arch">B.Arch</option>
+                <option value="B.E">B.E</option>
+                <option value="BCA">BCA</option>
+                <option value="MCA">MCA</option>
+                <option value="BA">BA</option>
+                <option value="B.Com">B.Com</option>
+                <option value="MA">MA</option>
+                <option value="M.Com">M.Com</option>
+                <option value="Ph.D">Ph.D</option>
+            </select>
+            <div class="qualiValidation">Select Your Appropriate Qualification</div>
+        </div>
+        <div class="imageShow">
+            <img id="file-ip-1-preview">
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Upload Photo</label>
+            <form method="POST" enctype="multipart/form-data" onsubmit="return mySubmitFunction(event)">
+                <div class="d-flex" id="uploadDiv">
+                    <input class="form-control" type="file" id="formFile" name="imageUpload"
+                        onchange="showPreview(event)">
+                </div>
+                <div class="imageValidation">Upload Image Formats like JPG, JPEG, PNG, GIF</div>
+                <div class="imageEmpty">Upload A Image</div>
+                <div class="imageSubmit">Image Submitted Successfully</div>
+                <div class="mainValidation">Enter All Fields</div>
+                <div class="mt-3">
+                    <div class="text-center">
+                        <button class="btn btn-primary uploadBTN" onclick="saveData(event)">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
