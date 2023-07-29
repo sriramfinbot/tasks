@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app1.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="firstName" class="form-label">Enter First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Enter Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+        </div>
+        <div class="mb-3">
+            <select class="form-select" aria-label="Default select example" id="Qualification">
+                <option selected>Select Your Highest Qualification</option>
+                <option value="MCA">MCA</option>
+                <option value="B.Tech">B.Tech</option>
+                <option value="BCA">BCA</option>
+                <option value="M.Tech">M.Tech</option>
+                <option value="BSc">BSc</option>
+                <option value="MSc">MSc</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <select class="form-select" multiple aria-label="Multiple select example" id="blood_group">
+                <option selected>Select Your Blood Group</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="Male"
+                    checked>
+                <label class="form-check-label" for="exampleRadios1">
+                    Male
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="Female">
+                <label class="form-check-label" for="exampleRadios2">
+                    Female
+                </label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                <label class="form-check-label" for="flexSwitchCheckChecked">Interested In NSS Campaign</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Job City Preference</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="Hyderabad" class="A">
+                <label class="form-check-label" for="inlineCheckbox1">Hyderabad</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="Bangalore" class="B">
+                <label class="form-check-label" for="inlineCheckbox2">Bangalore</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox" value="Delhi" class="C">
+                <label class="form-check-label" for="inlineCheckbox2">Delhi</label>
+            </div>
+        </div>
+
+
+        <div class="text-center mb-5">
+            <button type="button" class="btn btn-primary" onclick="submit(event)">Submit</button>
+        </div>
+    </div>
+    <div class="container-fluid border border-dark p-2" id="table">
+            <div class="container-fluid border border-dark border-1 m-1 row">
+                <div class="col-2">Email</div>
+                <div class="col-1">First Name</div>
+                <div class="col-1">Last Name</div>
+                <div class="col-1">Qualification</div>
+                <div class="col-2">Blood Group</div>
+                <div class="col-1">Gender</div>
+                <div class="col-2">NSS Preference</div>
+                <div class="col-2">Job City</div>
+            </div>
+    </div>
+
+</body>
+
+</html>

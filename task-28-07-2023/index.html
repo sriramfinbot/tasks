@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="mb-3">
+            <label for="username" class="form-label">Enter UserName</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter UserName">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="firstName" class="form-label">Enter First Name</label>
+            <input type="text" class="form-control" id="firstName" placeholder="Enter First Name">
+        </div>
+        <div class="mb-3">
+            <label for="lastName" class="form-label">Enter Last Name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Enter Last Name">
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" class="form-control" aria-describedby="passwordHelpBlock">
+        <div id="passwordHelpBlock" class="form-text">
+            Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces,
+            special characters, or emoji.
+        </div>
+        <label for="RepPassword" class="form-label">Repeat Password</label>
+        <input type="password" id="RepPassword" class="form-control" aria-describedby="passwordHelpBlock">
+        <div id="passwordHelpBlock" class="form-text">
+            Enter Your Password Again
+        </div>
+        <div class="mb-3">
+            <label for="moreInfo" class="form-label">Enter About Yourself</label>
+            <textarea class="form-control" id="moreInfo" rows="3"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>
